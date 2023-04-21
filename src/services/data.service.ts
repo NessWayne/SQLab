@@ -11,6 +11,8 @@ class DataService {
   
   public async getResultMethod(additionalDUIds: Array<string>): Promise<any> {
 
+    let results = [];
+
     for(const additionalId of additionalDUIds) {
 
         const query = `SELECT * FROM result_method WHERE additional_data_user_id=?`;
@@ -43,21 +45,27 @@ class DataService {
         regWCCR.CCRId = "";
 
         if(regAprobado.resultMethodId && regWCCR.resultMethodId){
-          console.log(regAprobado);
-          console.log(regWCCR)
 
-        //console.log(resm)
-        
-        console.log("--------------------------------------------")
+          results.push(regAprobado);
+          results.push(regWCCR);
+
         }
-
 
     }
 
- 
+    return results;
   }
 
  
+  public async updateResultMethod(data: any){
+  
+    for(const row of data) {
+      let query = 'UPDATE result_method SET configurable_credit_request_id=? WHERE id=?';
+      //await this.entityManager.query(query, [row.CCRId, row.resultMethodId]);
+    }
+
+  }
+
 }
 
 export default DataService;
