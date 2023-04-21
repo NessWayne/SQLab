@@ -1,4 +1,4 @@
-# template-typescript-nodemon
+# SQLab
 
 [![Build][build]][build-badge]
 [![Coverage][codecov-shield]][codecov]
@@ -12,8 +12,8 @@ This project provides basic scaffolding for developing and building TypeScript l
 Clone the template and install its dependencies:
 
 ```bash
-git clone git@github.com:metonym/template-typescript-nodemon.git
-cd template-typescript-nodemon
+git clone https://github.com/NessWayne/SQLab.git
+cd SQLab
 yarn install
 ```
 
